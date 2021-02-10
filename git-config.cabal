@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0f49020a8cdb5c1fe3c4e47e6cb7ac3faa25db36208c7e09265b20c9769c645b
+-- hash: c8635f17733d63dd6af8855a6a8ad55dffb4644076ccbf17df337f48bd608e9d
 
 name:           git-config
 version:        0.1.2
@@ -48,7 +48,7 @@ library
   ghc-options: -Wall -fno-warn-partial-type-signatures -fno-warn-name-shadowing -fwarn-tabs -fwarn-unused-imports -fwarn-missing-signatures -fwarn-incomplete-patterns
   build-depends:
       base >=4.7 && <5
-    , megaparsec >=7 && <9
+    , megaparsec >=7 && <10
     , text
     , unordered-containers
   exposed-modules:
