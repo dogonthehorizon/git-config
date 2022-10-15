@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.2.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0f49020a8cdb5c1fe3c4e47e6cb7ac3faa25db36208c7e09265b20c9769c645b
+-- hash: 91b11f5e5da7e1c25b8d1d6d06255067732afb6c11fee2f6bc44e9e5697fa53a
 
 name:           git-config
 version:        0.1.2
@@ -44,11 +44,12 @@ source-repository head
 library
   hs-source-dirs:
       src
-  default-extensions: OverloadedStrings
+  default-extensions:
+      OverloadedStrings
   ghc-options: -Wall -fno-warn-partial-type-signatures -fno-warn-name-shadowing -fwarn-tabs -fwarn-unused-imports -fwarn-missing-signatures -fwarn-incomplete-patterns
   build-depends:
       base >=4.7 && <5
-    , megaparsec >=7 && <9
+    , megaparsec >=7 && <10
     , text
     , unordered-containers
   exposed-modules:
@@ -62,21 +63,20 @@ test-suite git-config-test
   main-is: Tasty.hs
   hs-source-dirs:
       test
-  default-extensions: OverloadedStrings
+  default-extensions:
+      OverloadedStrings
   ghc-options: -Wall -fno-warn-partial-type-signatures -fno-warn-name-shadowing -fwarn-tabs -fwarn-unused-imports -fwarn-missing-signatures -fwarn-incomplete-patterns -threaded -rtsopts -with-rtsopts=-N
   build-tool-depends:
       tasty-discover:tasty-discover >=4.2.1 && <4.3
   build-depends:
       base >=4.7 && <5
     , git-config
+    , hedgehog
     , megaparsec
-    , smallcheck
-    , smallcheck-series
     , tasty
     , tasty-discover
+    , tasty-hedgehog
     , tasty-hunit
-    , tasty-smallcheck
-    , tasty-travis
     , text
     , unordered-containers
   other-modules:

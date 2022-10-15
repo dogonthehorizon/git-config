@@ -30,6 +30,8 @@ extra-source-files:
 
 dependencies:
   - base >=4.7 && <5
+  - text
+  - unordered-containers
 default-extensions:
   - OverloadedStrings
 ghc-options:
@@ -45,9 +47,7 @@ ghc-options:
 library:
   source-dirs: src
   dependencies:
-    - unordered-containers
-    - megaparsec >=7 && < 9
-    - text
+    - megaparsec >= 7 && < 10
   exposed-modules:
     - Text.GitConfig.Parser
 
@@ -63,12 +63,8 @@ tests:
     dependencies:
       - git-config
       - megaparsec
-      - smallcheck
-      - smallcheck-series
+      - hedgehog
       - tasty
       - tasty-discover
       - tasty-hunit
-      - tasty-smallcheck
-      - tasty-travis
-      - text
-      - unordered-containers
+      - tasty-hedgehog
