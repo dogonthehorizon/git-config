@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 91b11f5e5da7e1c25b8d1d6d06255067732afb6c11fee2f6bc44e9e5697fa53a
+-- hash: 0ac3de1db93040d478721a0824000ff3702555fc52ec79efcb880072ae9d6728
 
 name:           git-config
 version:        0.1.2
@@ -30,7 +30,7 @@ homepage:       https://github.com/dogonthehorizon/git-config#readme
 bug-reports:    https://github.com/dogonthehorizon/git-config/issues
 author:         Fernando Freire
 maintainer:     Fernando Freire <dogonthehorizon@gmail.com>
-copyright:      2018 Fernando Freire
+copyright:      2022 Fernando Freire
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
