@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/dogonthehorizon/git-config.svg?branch=master)](https://travis-ci.org/dogonthehorizon/git-config)
-
 # git-config
 
 A simple parser for [Git configuration] files.
