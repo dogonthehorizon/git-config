@@ -12,4 +12,13 @@ jobs:
       - uses: haskell/actions/setup@v2
         with:
           enable-stack: true
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.stack
+            .stack-work
+          # best effort for cache: tie it to Stack resolver and package config
+          key: ${{ runner.os }}-stack-${{ hashFiles('stack.yaml.lock', 'package.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-stack
       - run: stack build --test
