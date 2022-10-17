@@ -1,8 +1,9 @@
-name: Build & Test
+name: Publish to Hackage
 
 on:
   push:
-  pull_request:
+    tags:
+      - "*.*.*"
 
 jobs:
   build:
@@ -10,9 +11,7 @@ jobs:
     strategy:
       matrix:
         ghc:
-          - "9.2"
           - "9.0"
-          - "8.10"
     steps:
       - uses: actions/checkout@v3
       - uses: haskell/actions/setup@v2
@@ -28,4 +27,8 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.ghc }}-stack-${{ hashFiles('stack.yaml.lock', 'package.yaml') }}
           restore-keys: |
             ${{ runner.os }}-stack
-      - run: stack --system-ghc --stack-yaml stack-${{ matrix.ghc }}.yaml build --test
+      - run: |
+            stack --system-ghc --stack-yaml stack-${{ matrix.ghc }}.yaml build
+            stack --system-ghc --stack-yaml stack-${{ matrix.ghc }}.yaml upload .
+        env:
+          HACKAGE_KEY: ${{ secrets.HACKAGE_KEY }}
